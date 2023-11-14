@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daberger <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/01 16:34:25 by daberger          #+#    #+#             */
+/*   Updated: 2023/10/03 13:51:02 by daberger         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int    ft_strlowcase(char *str)
+{
+    int    i;
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+        {
+                str[i] = str[i] + 32;
+        }
+        i++;
+    }
+    i = 0;
+    while (str[i] != '\0')
+    {
+        if (str[i] >= 'a' && str[i] <= 'z')
+        {
+            
+        }
+            else if (str[i++] >= 'a' && str[i++] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+        i++;
+    }
+    return (*str);
+}
+
+
+int    main(void)
+{
+    char    str[] = "str, hElOOOO; cinq++un";
+
+    printf("char_str=\n%s\n\n", str);
+    
+    ft_strlowcase(str);
+
+    printf("char_str=\n%s\n", str);
+}
